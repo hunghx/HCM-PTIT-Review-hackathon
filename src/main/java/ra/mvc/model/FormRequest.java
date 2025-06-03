@@ -3,6 +3,7 @@ package ra.mvc.model;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import ra.mvc.validator.EmailUnique;
 
 public class FormRequest {
 //    @NotBlank @NotNull @NotEmpty
@@ -17,6 +18,7 @@ public class FormRequest {
     @NotBlank(message = "{name.emtpy}")
     private String name;
     @NotBlank(message = "Not blank!!!!!!")
+    @EmailUnique
     private String email;
     @Min(value = 18, message = "{age.min}")
     private int age;
